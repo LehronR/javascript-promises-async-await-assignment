@@ -42,6 +42,22 @@
 // 3. Uses fetch() at the modified endpoint
 // 4. Using the chosen approach (promise chaining or async/await), convert the response to json and return the data in its entirety
 
+// THIS IS THE CODE I WAS HAVING ISSUES WITH.
+// TEACHERJS ALERTS "Invalid result: Expected an object"
 
+// function getCatFacts(num) {
+//   fetch(`https://catfact.ninja/facts?limit=${num}`)
+//     .then((response) => response.json())
+//     .then((facts) => facts);
+// }
+
+// getCatFacts(2);
+
+// WORKING EXAMPLE OF ASSIGNMENT USING ASYNC/AWAIT
+async function getCatFacts(num) {
+  let response = await fetch(`https://catfact.ninja/facts?limit=${num}`);
+  let facts = await response.json();
+  return facts;
+}
 
 //END OF ASSIGNMENT
